@@ -9,7 +9,7 @@ nRands n = (rand . snd . head $ prev) : prev
     where prev = nRands $ n - 1
 
 fiveRands :: [Integer]
-fiveRands = map fst $ nRands 5
+fiveRands = reverse $ map fst $ nRands 5
 
 main :: IO ()
 main = print $ assert
