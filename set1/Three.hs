@@ -6,8 +6,8 @@ import Control.Exception.Base (assert)
 type Gen a = Seed -> (a, Seed)
 
 randLetter :: Gen Char
-randLetter s =  (toLetter char, newSeed)
-    where (char, newSeed) = rand s
+randLetter s =  (toLetter int, newSeed)
+    where (int, newSeed) = rand s
 
 generalA :: (Integer -> Integer) -> Gen Integer
 generalA f s = (f n, seed)
